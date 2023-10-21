@@ -8,9 +8,9 @@ import os
 
 # private token or personal token authentication
 GITLAB_TOKEN = os.environ['GITLAB_TOKEN']
-GITLAB_URI = "https://xdevteam.com/"
-GITLAB_GROUP = 'se_team'
-CONFLUENCE_URI = "https://rest.confluence.softswiss.com"
+GITLAB_URI = "https://gitlab.com/"
+GITLAB_GROUP = 'team'
+CONFLUENCE_URI = "https://rest.confluence.com"
 CONFLUENCE_JWT = os.environ['CONFLUENCE_JWT']
 
 
@@ -70,8 +70,8 @@ def post_data_to_confluence(url, token, gitlab_users):
             token=token)
 
         # Get all pages from the space
-        space = 'IN'
-        page_title = "SE Individual performance"
+        space = 'TEST'
+        page_title = "EXAMPLE"
         page_id = confluence.get_page_id(space, page_title)
 
         page_content = confluence.get_page_by_id(page_id, expand='body.storage')['body']['storage']['value']
